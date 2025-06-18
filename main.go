@@ -8,6 +8,8 @@ func main() {
 	// PointersPassByValueToCopy()
 	// PointersPassByValueToCopyFail()
 	// TypeCompositionExample()
+	// IfsAndLoopsExample()
+	MapLoopExample()
 }
 
 // Mutability

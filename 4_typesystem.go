@@ -36,6 +36,15 @@ func (p person) copy() person {
 
 // But usually pointer receiver 1. allow modification, 2. avoid copying
 
+// Can check for nil - providing default value
+func (p *person) NameOrDefault(defaultName string) string {
+	if p != nil {
+		return p.Name
+	} else {
+		return defaultName
+	}
+}
+
 // String implements fmt.Stringer
 func (p *person) String() string {
 	return fmt.Sprintf("Person name: %s, age: %d", p.Name, p.Age)
