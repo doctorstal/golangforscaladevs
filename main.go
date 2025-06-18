@@ -9,7 +9,9 @@ func main() {
 	// PointersPassByValueToCopyFail()
 	// TypeCompositionExample()
 	// IfsAndLoopsExample()
-	MapLoopExample()
+	// MapLoopExample()
+	// ErrorHandlingExample()
+	DeferExample()
 }
 
 // Mutability
