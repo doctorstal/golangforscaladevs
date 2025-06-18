@@ -24,5 +24,5 @@ func main() {
 // Anti-framework philisofy - use libs, built in and third-party
 // Always read the docs: for example `time.Now()` returns local time. Use time.Now().UTC() or .UnixMili() for writing to DB
 // Project structure, internal packages, forbidden cyclical imports
-// Concurrency: goroutines, channels, wait gruops, mutexes and others from `sync` package
+// Concurrency: everything is blocking by default, use goroutines, channels, wait gruops, mutexes and others from `sync` package https://gobyexample.com/goroutines
 // Fun fact: you can state index of element when creating array
