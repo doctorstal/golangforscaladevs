@@ -12,6 +12,7 @@ func PointersPassByValueToCopy() {
 	type person struct {
 		Name string
 	}
+
 	rename := func(p person, name string) person {
 		p.Name = name
 		return p

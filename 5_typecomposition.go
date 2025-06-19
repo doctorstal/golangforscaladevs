@@ -4,6 +4,7 @@ import "fmt"
 
 // interface
 type Shape interface {
+	fmt.Stringer
 	Area() float64
 	GetWidth() float64
 	GetHeight() float64
@@ -42,6 +43,29 @@ type Rectangle struct {
 	WidthHeight
 }
 
+// GetWidth implements Shape.
+// Subtle: this method shadows the method (WidthHeight).GetWidth of Rectangle.WidthHeight.
+func (this *Rectangle) GetWidth() float64 {
+	panic("unimplemented")
+}
+
+// SetHeight implements Shape.
+// Subtle: this method shadows the method (WidthHeight).SetHeight of Rectangle.WidthHeight.
+func (this *Rectangle) SetHeight(float64) {
+	panic("unimplemented")
+}
+
+// SetWidth implements Shape.
+// Subtle: this method shadows the method (WidthHeight).SetWidth of Rectangle.WidthHeight.
+func (this *Rectangle) SetWidth(float64) {
+	panic("unimplemented")
+}
+
+// String implements Shape.
+func (this *Rectangle) String() string {
+	panic("unimplemented")
+}
+
 func (this *Rectangle) Area() float64 {
 	return this.GetWidth() * this.GetHeight() / 2
 }
@@ -55,6 +79,7 @@ func (this *Rectangle) GetHeight() float64 {
 
 func TypeCompositionExample() {
 	var r Rectangle
+
 	var i Shape = &r
 	i.SetWidth(4)
 	i.SetHeight(6)

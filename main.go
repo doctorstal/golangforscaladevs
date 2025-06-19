@@ -1,20 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	fmt.Println("Hello, scala devs!")
+	
 	// PointersExample()
 	// PointersPassByValueToCopy()
-	// PointersPassByValueToCopyFail()
+	PointersPassByValueToCopyFail()
 	// TypeCompositionExample()
 	// IfsAndLoopsExample()
 	// MapLoopExample()
 	// ErrorHandlingExample()
-	DeferExample()
+	// DeferExample()
 }
 
-// Mutability
+// Lack of imutability - constants are compile-time constants, and only primitive types
 // Pointers, pass by value, pass by reference
 // Type system: structs, receiver functions, interfaces, avoid interface pointers
 // No monads and collection API - back to `if` and `for` loops
