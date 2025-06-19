@@ -8,13 +8,14 @@ func main() {
 	// PointersPassByValueToCopy()
 	// PointersPassByValueToCopyFail()
 	// TypeCompositionExample()
-	// IfsAndLoopsExample()
+	IfsAndLoopsExample()
 	// MapLoopExample()
 	// ErrorHandlingExample()
-	DeferExample()
+	// DeferExample()
+	// ArrayIndexesExample()
 }
 
-// Mutability
+// Mutability. Read https://go.dev/doc/effective_go#constants
 // Pointers, pass by value, pass by reference
 // Type system: structs, receiver functions, interfaces, avoid interface pointers
 // No monads and collection API - back to `if` and `for` loops

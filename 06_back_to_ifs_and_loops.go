@@ -12,6 +12,30 @@ func IfsAndLoopsExample() {
 		fmt.Println("Next step:", i)
 	}
 
+	// You can ommit parts of the loop statement:
+	for i := 0; i < 5; {
+		i++
+	}
+
+	i := 0
+	for ; i < 5; i++ {
+	}
+
+	for ; ; i++ {
+		if i > 5 {
+			break
+		}
+	}
+
+	for i < 5 {
+		i++
+	}
+
+	for {
+		fmt.Println("loop")
+		break
+	}
+
 	for i := range 5 {
 		fmt.Println("Next range step:", i)
 	}
@@ -28,4 +52,3 @@ func IfsAndLoopsExample() {
 		fmt.Println("element ", v)
 	}
 }
-
