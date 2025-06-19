@@ -1,12 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	fmt.Println("Hello, scala devs!")
+
 	// PointersExample()
 	// PointersPassByValueToCopy()
-	// PointersPassByValueToCopyFail()
+	PointersPassByValueToCopyFail()
 	// TypeCompositionExample()
 	IfsAndLoopsExample()
 	// MapLoopExample()
@@ -15,7 +18,7 @@ func main() {
 	// ArrayIndexesExample()
 }
 
-// Mutability. Read https://go.dev/doc/effective_go#constants
+// Lack of imutability - constants are compile-time constants, and only primitive types. Read https://go.dev/doc/effective_go#constants
 // Pointers, pass by value, pass by reference
 // Type system: structs, receiver functions, interfaces, avoid interface pointers
 // No monads and collection API - back to `if` and `for` loops

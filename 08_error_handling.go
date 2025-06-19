@@ -7,7 +7,7 @@ import (
 
 func canProduceError(shouldError bool) (string, error) {
 	if shouldError {
-		return "Failure", fmt.Errorf("here is your error")
+		return "", fmt.Errorf("here is your error")
 	} else {
 		return "Success", nil
 	}

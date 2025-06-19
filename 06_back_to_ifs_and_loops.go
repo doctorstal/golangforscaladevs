@@ -8,6 +8,9 @@ func IfsAndLoopsExample() {
 		panic("1 is not equal 2!")
 	}
 
+	if i:=0; i>0 {
+	}
+
 	for i := 0; i < 5; i++ {
 		fmt.Println("Next step:", i)
 	}
@@ -31,8 +34,8 @@ func IfsAndLoopsExample() {
 		i++
 	}
 
+
 	for {
-		fmt.Println("loop")
 		break
 	}
 
@@ -40,13 +43,13 @@ func IfsAndLoopsExample() {
 		fmt.Println("Next range step:", i)
 	}
 
-	slice := make([]int, 5)
+	slice := make([]int, 5, 100)
 
 	for i := range slice {
 		slice[i] = i
 	}
 
-	slice = append(slice, 9, 10)
+	slice = append(slice, 10)
 
 	for _, v := range slice {
 		fmt.Println("element ", v)

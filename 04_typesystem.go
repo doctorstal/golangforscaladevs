@@ -7,10 +7,19 @@ import "fmt"
 // simple struct
 type privateStruct struct {
 	privateAttribute string
+	Public           string
 }
+
+func NewPrivateStruct() *privateStruct {
+	return &privateStruct{}
+}
+
 type PublicStruct struct {
 	PublicAttribute string
+	privateMember   string
 }
+
+var pointer int = 20
 
 var (
 	privateVar int
@@ -22,10 +31,15 @@ type person struct {
 	Age  int
 }
 
+// AddOneYear implements TimeConsumer.
+func (p *person) AddOneYear() {
+	panic("unimplemented")
+}
+
 var p = &person{}
 
 // Receiver function, i.e. "method"
-func (p *person) rename(newName string) {
+func (p *person) Rename(newName string) {
 	p.Name = newName
 }
 
@@ -56,9 +70,8 @@ type TimeConsumer interface {
 	AddOneYear()
 }
 
-// AddOneYear implements TimeConsumer.
-func (p *person) AddOneYear() {
-	panic("unimplemented")
-}
-
 var timeConsumer TimeConsumer = p
+
+func NewPerson() TimeConsumer {
+	return &person{}
+}

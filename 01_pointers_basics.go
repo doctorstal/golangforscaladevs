@@ -27,8 +27,9 @@ func PointersExample() {
 		structPtr.value,
 	)
 
+
 	// Pass by value and by reference
-	fmt.Print("Pass by value\n\n")
+	fmt.Print("Pass by pointer\n\n")
 	addOne := func(x *int) {
 		*x++
 	}
