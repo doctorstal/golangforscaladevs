@@ -18,7 +18,7 @@ func ErrorHandlingExample() {
 	if err != nil {
 		log.Fatal("Received an error!", err)
 	}
-
+	// err is not checked, but compilation does not fail. Take linter
 	res2, err := canProduceError(true)
 
 	fmt.Println(res1, res2)
