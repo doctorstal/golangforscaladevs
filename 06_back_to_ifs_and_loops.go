@@ -2,13 +2,15 @@ package main
 
 import "fmt"
 
+// IfsAndLoopsExample does not do much - only
+// shows how to use ifs and for loops, check the implementaion
 func IfsAndLoopsExample() {
 	a, b := 1, 2
 	if a == b {
 		panic("1 is not equal 2!")
 	}
 
-	if i:=0; i>0 {
+	if i := 0; i > 0 {
 	}
 
 	for i := 0; i < 5; i++ {
@@ -33,7 +35,6 @@ func IfsAndLoopsExample() {
 	for i < 5 {
 		i++
 	}
-
 
 	for {
 		break

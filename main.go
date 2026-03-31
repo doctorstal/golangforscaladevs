@@ -22,11 +22,12 @@ func main() {
 // Pointers, pass by value, pass by reference
 // Type system: structs, receiver functions, interfaces, avoid interface pointers
 // No monads and collection API - back to `if` and `for` loops
+// 	check `slices` and `maps` packages, as well as `container` for more advanced types (list/heap/ring)
 // No options, nil dereference
 // Error handling, handle all errors
 // Defer statement
 // Anti-framework philisofy - use libs, built in and third-party
-// Always read the docs: for example `time.Now()` returns local time. Use time.Now().UTC() or .UnixMili() for writing to DB
+// *Always read the docs:* for example `time.Now()` returns local time. Use time.Now().UTC() or .UnixMili() for writing to DB
 // Project structure, internal packages, forbidden cyclical imports
 // Concurrency: everything is blocking by default, use goroutines, channels, wait gruops, mutexes and others from `sync` package https://gobyexample.com/goroutines
 // Fun fact: you can state index of element when creating array
