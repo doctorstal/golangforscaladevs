@@ -78,6 +78,30 @@ if err != nil {
 
 This is verbose compared to `for-comprehension` chains, but error paths are always visible in the code — no hidden exception propagation.
 
+### Panic and Recovery — Not a Replacement for `try/catch`
+
+**`5.1_panic_and_recovery.go`** — Go does have `panic`, and it does have a recovery mechanism. But they are **not** a general-purpose error handling strategy — don't reach for them the way you'd reach for `throw`/`catch` in Scala.
+
+`panic` is for truly unrecoverable programmer mistakes: index out of bounds, nil dereferences, broken invariants. It unwinds the call stack and crashes the program unless intercepted.
+
+`recover()` can catch a panic, but only when called **directly inside a deferred function**:
+
+```go
+func safeDiv(input int) (result int, err error) {
+    defer func() {
+        if r := recover(); r != nil {
+            err = fmt.Errorf("recovered from panic: %v", r)
+        }
+    }()
+    result = mightPanic(input)
+    return
+}
+```
+
+The pattern converts a panic into an `error` — back to idiomatic Go. The legitimate use case is at **package or server boundaries**: you don't want one bad request to crash the whole process, so a top-level middleware recovers panics and returns a 500. Inside your own code, prefer returning `error` values from the start.
+
+> Scala: `throw`/`catch` is normal control flow. Go: panicking is a last resort. If you find yourself writing `recover()` everywhere, you're fighting the language.
+
 ---
 
 ## 6. `defer` — Cleanup Without `finally`
